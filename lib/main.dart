@@ -17,6 +17,7 @@ class _body extends StatefulWidget {
   @override
   State<_body> createState() => body();
 }
+
 class Question {
   String question;
   bool reponseCorrect;
@@ -30,26 +31,19 @@ class body extends State<_body> {
   List<Icon> listeIcone = [];
 
   final List<Question> questionsListe = [
-    Question('Test 1 ',false),
-    Question('Test 2 ', true),
-    Question('Test 3', true),
-    Question('Test 4', true),
-    Question('Test 5', true),
-    Question('Test 6', true),
-    Question('Test 7', false),
-    Question('Test 9', true),
-    Question('Test 10', false),
-    Question('Test 11', true),
-    Question('Test 12', true),
-    Question('Test 13', true),
-    Question('Test 14', true),
+    Question('Le piton des neiges est un volcan de la Réunion ?', true),
+    Question('Flutter permet de faire des applications web également ?', false),
+    Question('Php est le language utilisé par Flutter ?', true),
+    Question('Qu est ce que Etienne est un bon formateur ?', true),
+    Question('Est ce que flutter est un bon langage de programmation?', true),
   ];
 
-  void ajoutItems(item){
+  void ajoutItems(item) {
     setState(() {
       listeIcone.add(item);
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -62,7 +56,7 @@ class body extends State<_body> {
               padding: const EdgeInsets.all(10.0),
               child: Center(
                 child: Text(
-                  'Ceci est une question',
+                  questionsListe[count].question,
                   style: TextStyle(color: Colors.white, fontSize: 25),
                 ),
               ),
@@ -82,7 +76,7 @@ class body extends State<_body> {
                         onPrimary: Colors.white,
                       ),
                       onPressed: () {
-                        ajoutItems(check);
+                        _Verificationdesquestion(true);
                       }
 
                   )
@@ -103,7 +97,7 @@ class body extends State<_body> {
                       onPrimary: Colors.white,
                     ),
                     onPressed: () {
-                      ajoutItems(close);
+                      _Verificationdesquestion(false);
                     },
                   )
               ),
@@ -116,7 +110,28 @@ class body extends State<_body> {
         ]
     );
   }
+
+  _Verificationdesquestion(selectionreponse) {
+    if (selectionreponse == questionsListe[count].reponseCorrect) {
+      //Correct answer
+
+      setState(() {
+        listeIcone.add(check);
+
+        // Check if don't cross list size limit which will result in error
+        if (count < questionsListe.length - 1) count++;
+      });
+    } else {
+      //Incorrect answer
+      setState(() {
+        listeIcone.add(close);
+
+        // Check if don't cross list size limit which will result in error
+        if (count < questionsListe.length - 1) count++;
+      });
+    }
   }
+}
 
 
 
