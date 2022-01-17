@@ -19,8 +19,8 @@ class _body extends StatefulWidget {
 }
 
 class body extends State<_body> {
-  final valide = Icon(Icons.check, color: Colors.green);
-  final faux = Icon(Icons.clear, color: Colors.red);
+  final check = Icon(Icons.check, color: Colors.green);
+  final close = Icon(Icons.clear, color: Colors.red);
   int count = 0;
   List<Icon> listeIcone = [];
   @override
