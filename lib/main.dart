@@ -18,10 +18,10 @@ class _body extends StatefulWidget {
   State<_body> createState() => body();
 }
 
-class Question {
+class MesQuestion {
   String question;
   bool reponseCorrect;
-  Question(this.question, this.reponseCorrect);
+  MesQuestion(this.question, this.reponseCorrect);
 }
 
 class body extends State<_body> {
@@ -30,12 +30,12 @@ class body extends State<_body> {
   int count = 0;
   List<Icon> listeIcone = [];
 
-  final List<Question> questionsListe = [
-    Question('Le piton des neiges est un volcan de la Réunion ?', true),
-    Question('Flutter permet de faire des applications web également ?', false),
-    Question('Php est le language utilisé par Flutter ?', true),
-    Question('Qu est ce que Etienne est un bon formateur ?', true),
-    Question('Est ce que flutter est un bon langage de programmation?', true),
+  final List<MesQuestion> questionsListe = [
+    MesQuestion('Le piton des neiges est un volcan de la Réunion ?', true),
+    MesQuestion('Flutter permet de faire des applications web également ?', false),
+    MesQuestion('Php est le language utilisé par Flutter ?', true),
+    MesQuestion('Qu est ce que Etienne est un bon formateur ?', true),
+    MesQuestion('Est ce que flutter est un bon langage de programmation?', true),
   ];
 
   void ajoutItems(item) {
