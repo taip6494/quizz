@@ -19,10 +19,10 @@ class _body extends StatefulWidget {
 }
 
 class body extends State<_body> {
-  final tickIcon = Icon(Icons.check, color: Colors.green);
-  final crossIcon = Icon(Icons.clear, color: Colors.red);
+  final valide = Icon(Icons.check, color: Colors.green);
+  final faux = Icon(Icons.clear, color: Colors.red);
   int count = 0;
-  List<Icon> iconsList = [];
+  List<Icon> listeIcone = [];
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -79,7 +79,7 @@ class body extends State<_body> {
         ),
         Row(
           children:
-            iconsList,
+          listeIcone,
         )
     ]
     );
