@@ -48,7 +48,6 @@ class body extends State<_body> {
   void ajoutItems(item){
     setState(() {
       listeIcone.add(item);
-      questionsList.add
     });
   }
   @override
